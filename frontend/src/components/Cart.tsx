@@ -45,7 +45,7 @@ export default function CartPage() {
                 className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow p-4 gap-4"
               >
                 <img
-                  src={item.product.image}
+                  src={item.product.coverImage}
                   alt={item.product.title}
                   className="w-28 h-28 rounded-lg object-cover"
                 />

@@ -91,7 +91,6 @@ export async function axiosJson<JSON = unknown>(
       data: payload,
       ...axiosConfig,
     });
-    console.log("res", res);
     const camelData = camelcaseKeys(res.data, { deep: true });
     return camelData as JSON;
   } catch (error: any) {

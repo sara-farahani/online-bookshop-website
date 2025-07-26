@@ -21,7 +21,6 @@ export default async function login(loginData: FormData) {
 
   try {
     const response = await axiosJsonwithAuth(url, body, config);
-    console.log("LOGEDDD IN ");
     return { data: response };
   } catch (err: any) {
     const errorMessage =
