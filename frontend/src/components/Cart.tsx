@@ -54,9 +54,6 @@ export default function CartPage() {
                   <h2 className="text-xl font-semibold">
                     {item.product.title}
                   </h2>
-                  <p className="text-gray-600">
-                    نویسنده: {item.product.author}
-                  </p>
                   <p className="mt-2 text-green-700 font-bold text-lg">
                     {(item.product.price * item.quantity).toLocaleString()}{" "}
                     تومان
