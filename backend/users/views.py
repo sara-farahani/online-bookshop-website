@@ -15,7 +15,6 @@ class LoginView(APIView):
         refresh = RefreshToken.for_user(user)
 
         response = Response({"msg": "Login successful"}, status=status.HTTP_200_OK)
-        print("LOGIN REPONSE", response)
         response.set_cookie(
             key='access_token',
             value=str(refresh.access_token),
@@ -35,12 +34,10 @@ class LoginView(APIView):
 
 class RegisterView(generics.CreateAPIView):
     def post(self, request):
-        print("req", request.data)
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
             return Response({'message': 'User registered successfully.'}, status=status.HTTP_201_CREATED)
-        print("Errors:", serializer.errors)   
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProfileView(generics.RetrieveAPIView):

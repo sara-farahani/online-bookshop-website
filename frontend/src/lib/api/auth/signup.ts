@@ -24,8 +24,10 @@ export default async function signup(signupData: FormData) {
 
   const body = { email, password };
 
+  const config = { method: "POST" };
+
   try {
-    const response = await axiosJsonwithAuth(url, body);
+    const response = await axiosJsonwithAuth(url, body, config);
     return { data: response };
   } catch (err: any) {
     const errorMessage =
